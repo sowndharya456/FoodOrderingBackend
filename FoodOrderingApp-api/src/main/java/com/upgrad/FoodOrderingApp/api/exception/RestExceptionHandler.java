@@ -64,7 +64,7 @@ public class RestExceptionHandler {
     public ResponseEntity<ErrorResponse> AuthorizationFailedException(AuthorizationFailedException exc , WebRequest request) {
         return new ResponseEntity<ErrorResponse>(new ErrorResponse().code(exc.getCode()).
                 message(exc.getErrorMessage()),
-                HttpStatus.UNAUTHORIZED);
+                HttpStatus.FORBIDDEN);
     }
 
     @ExceptionHandler(SaveAddressException.class)

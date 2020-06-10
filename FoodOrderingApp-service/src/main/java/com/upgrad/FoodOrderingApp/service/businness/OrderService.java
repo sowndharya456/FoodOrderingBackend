@@ -4,6 +4,7 @@ import com.upgrad.FoodOrderingApp.service.dao.CouponDao;
 import com.upgrad.FoodOrderingApp.service.dao.OrderDao;
 import com.upgrad.FoodOrderingApp.service.dao.PaymentDao;
 import com.upgrad.FoodOrderingApp.service.entity.*;
+import com.upgrad.FoodOrderingApp.service.exception.CouponNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -56,11 +57,12 @@ public class OrderService {
         return orderDao.getItemByuuid(uuid);
     }
 
-    public CouponEntity getCouponByCouponId(String uuid) {
+    public CouponEntity getCouponByCouponId(String uuid) throws CouponNotFoundException {
         return couponDao.getCouponByUUID(uuid);
     }
-    public CouponEntity getCouponByCouponName(String couponName) {
+    public CouponEntity getCouponByCouponName(String couponName) throws CouponNotFoundException {
         return couponDao.getCouponByName(couponName);
+
     }
 
 }

@@ -20,7 +20,7 @@ public class OrderDao {
         try {
             return em.createNamedQuery("getOrderDetails", OrderItemEntity.class).setParameter("ordersid", ordersid).getResultList();
         } catch (NoResultException nre) {
-            return null;
+            return null ;
         }
     }
 

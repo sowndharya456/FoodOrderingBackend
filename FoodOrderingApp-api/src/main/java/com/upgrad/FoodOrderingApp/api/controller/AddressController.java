@@ -137,6 +137,6 @@ public class AddressController {
         // Calls the getAllStates from addressService to get the list of stateEntity
         List<StateEntity> stateEntityList = addressService.getAllStates();
         StatesListResponse stateListResponse = AddressTransformer.toStateListResponse(stateEntityList);
-        return ResponseBuilder.ok().payload(stateListResponse).build();
+            return ResponseBuilder.ok().payload(stateListResponse).build();
     }
 }
